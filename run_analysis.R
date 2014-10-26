@@ -2,7 +2,7 @@
 ## Analyzing data collected from the accelerometers from the Samsung Galaxy S smartphone ##
 ## Operating System used : Windows 7 - 64 bit
 ## R Version: 3.1.1
-## Essential Library - dplyr
+## Essential Library - tidyr , base
 
 ## Data Source : https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
@@ -20,9 +20,9 @@
 ## y_train file contains all the codes which represent Activities that the volunteers have gone through
 ## subject_train file contains the volunteer information
 
-x_train<-read.table("./data/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/X_train.txt",stringsAsFactors=FALSE,sep="",header=F)
-y_train<-read.table("./data/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/y_train.txt",stringsAsFactors=FALSE,sep="",header=F)
-subject_train<-read.table("./data/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/subject_train.txt",stringsAsFactors=FALSE,sep="",header=F)
+x_train<-read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/X_train.txt",stringsAsFactors=FALSE,sep="",header=F)
+y_train<-read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/y_train.txt",stringsAsFactors=FALSE,sep="",header=F)
+subject_train<-read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/train/subject_train.txt",stringsAsFactors=FALSE,sep="",header=F)
 
 
 
@@ -32,14 +32,14 @@ subject_train<-read.table("./data/getdata_projectfiles_UCI HAR Dataset/UCI HAR D
 ## y_test file contains all the codes which represent Activities that the volunteers have gone through
 ## subject_test file contains the volunteer information
 
-x_test<-read.table("./data/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/X_test.txt",stringsAsFactors=FALSE,sep="",header=F)
-y_test<-read.table("./data/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/y_test.txt",stringsAsFactors=FALSE,sep="",header=F)
-subject_test<-read.table("./data/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/subject_test.txt",stringsAsFactors=FALSE,sep="",header=F)
+x_test<-read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/X_test.txt",stringsAsFactors=FALSE,sep="",header=F)
+y_test<-read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/y_test.txt",stringsAsFactors=FALSE,sep="",header=F)
+subject_test<-read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/test/subject_test.txt",stringsAsFactors=FALSE,sep="",header=F)
 
 
 # Extracting Feature file which describes all the measurement columns seen in Test and Training Data.
 
-features<-read.table("./data/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/features.txt",stringsAsFactors=FALSE,sep="",header=F)
+features<-read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/features.txt",stringsAsFactors=FALSE,sep="",header=F)
 
 ## Using Features table to update column names of Train and Test Dataset
 names(x_train) <- as.character(features$V2)
@@ -49,7 +49,7 @@ names(x_test) <- as.character(features$V2)
 
 # Extracting Activity file which describes all the Activities like WALKING, WALKING_UPSTAIRS etc seen in Test and Training Data.
 
-activity_labels<-read.table("./data/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/activity_labels.txt",stringsAsFactors=FALSE,sep="",header=F)
+activity_labels<-read.table("./getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset/activity_labels.txt",stringsAsFactors=FALSE,sep="",header=F)
 
 ## Updating Column Names of Activity Data frame
 names(activity_labels) <- c("activity","activity_desc")
