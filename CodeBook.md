@@ -25,10 +25,11 @@
 
 * subject : This column contains information regarding the subject who volunteered the experiment.
 
-* measurement_type : 1. This columns shows various mean and standard deviation for each measurement like tBodyAcc, tGravityAcc , tBodyAccJerk . 
-                     2. t and f in the column name stand for time and frequency domain 
-					 3. X , Y , Z in column names is used to denote 3-axial signals in the X, Y and Z directions.
-					 4. There are 66 Levels 
+* measurement_type : 
+  * This columns shows various mean and standard deviation for each measurement like tBodyAcc, tGravityAcc , tBodyAccJerk . 
+  * t and f in the column name stand for time and frequency domain 
+  * X , Y , Z in column names is used to denote 3-axial signals in the X, Y and Z directions.
+  * There are 66 Levels 
 					 
 * average : Average of each filtered variable is calculated for each activity_desc, and subject .
 
